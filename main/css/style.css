@@ -228,7 +228,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
-.header__info a {
+.header__info-feedback {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -236,7 +236,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
-.header__info a::before {
+.header__info-feedback::before {
   content: " ";
   display: block;
   background-image: url("/main/img/icon/email.svg");
@@ -248,8 +248,7 @@ h6 {
   margin-right: 0.4375rem;
   margin-top: 0.125rem;
 }
-.header__info a,
-.header__info span {
+.header__info-feedback, .header__info-language {
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 158%;
@@ -257,8 +256,7 @@ h6 {
   cursor: pointer;
 }
 @media (max-width: 600px) {
-  .header__info a,
-.header__info span {
+  .header__info-feedback, .header__info-language {
     display: none;
   }
 }
@@ -350,6 +348,13 @@ hr {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
+@media (max-width: 600px) {
+  .header__search-btn {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
 
 .phone__menu {
   display: none;
@@ -361,21 +366,49 @@ hr {
 }
 
 .phone__open {
-  width: 35px;
-  height: 35px;
+  width: 2.5rem;
+  height: 1.875rem;
   position: relative;
-}
-.phone__open svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  position: absolute;
-  top: 0;
-  left: 0;
   cursor: pointer;
-  fill: none;
-  stroke: #000000;
+}
+.phone__open span {
+  background: #1e1e1e;
+  border-radius: 0.75rem;
+  -webkit-border-radius: 0.75rem;
+  -moz-border-radius: 0.75rem;
+  -ms-border-radius: 0.75rem;
+  -o-border-radius: 0.75rem;
+  height: 0.25rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.phone__open span:nth-child(1) {
+  top: 0;
+}
+.phone__open span:nth-child(2) {
+  top: 0.8125rem;
+}
+.phone__open span:nth-child(3) {
+  bottom: 0;
+}
+@media (max-width: 345px) {
+  .phone__open {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .phone__open span {
+    height: 2px;
+  }
+  .phone__open span:nth-child(1) {
+    top: 0;
+  }
+  .phone__open span:nth-child(2) {
+    top: 0.5625rem;
+  }
+  .phone__open span:nth-child(3) {
+    bottom: 0;
+  }
 }
 
 .phone__menu-nav {
@@ -402,6 +435,7 @@ hr {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 1000;
 }
 .phone__menu-nav ul {
   display: -webkit-box;
@@ -456,6 +490,202 @@ hr {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+
+.start__section {
+  position: relative;
+  width: 100%;
+  background-color: #f7f7f8;
+  z-index: 0;
+  padding: 5rem 0;
+}
+.start__section::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 30vw;
+  height: 100%;
+  background-color: #60c0c3;
+}
+@media (max-width: 600px) {
+  .start__section::after {
+    width: 100vw;
+    height: 30%;
+  }
+}
+
+.start__container {
+  gap: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 600px) {
+  .start__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.start__block {
+  width: 50%;
+}
+@media (max-width: 600px) {
+  .start__block {
+    width: 100%;
+  }
+}
+.start__block h1 {
+  font-weight: 600;
+  color: #003154;
+  font-size: clamp(1.4375rem, 2.68vw, 2.0625rem);
+  line-height: 116%;
+  padding: clamp(0.5rem, 1.3vw, 1rem) 0;
+}
+.start__block p {
+  font-weight: 400;
+  font-size: clamp(0.9375rem, 1.46vw, 1.125rem);
+  line-height: 162%;
+  color: #404040;
+}
+.start__block a {
+  margin-top: clamp(2rem, 4.55vw, 3.5rem);
+  display: block;
+  font-family: "Golos";
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 148%;
+  color: #003154;
+  padding: 0.75rem clamp(2.375rem, 4.72vw, 3.625rem);
+  border: 0.0625rem solid #003154;
+  border-radius: 0.125rem;
+  -webkit-border-radius: 0.125rem;
+  -moz-border-radius: 0.125rem;
+  -ms-border-radius: 0.125rem;
+  -o-border-radius: 0.125rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.start__block-icon {
+  gap: clamp(0.625rem, 1.3vw, 1rem);
+}
+
+.start__icon-img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+@media (max-width: 1230px) {
+  .start__icon-img {
+    width: calc(
+    1.5rem + (40 - 24) * ((100vw - 320px) /
+          (1230 - 320))
+  );
+    height: calc(
+    1.5rem + (40 - 24) * ((100vw - 320px) /
+          (1230 - 320))
+  );
+  }
+}
+.start__icon-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.slider__item-img {
+  max-width: 36.75rem;
+  max-height: 27.5rem;
+}
+.slider__item-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-height: 27.5rem;
+}
+
+/* Dots */
+.slick-dots {
+  position: absolute;
+  bottom: -40px;
+  display: block;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  transform: translateX(-50vw);
+  -webkit-transform: translateX(-50vw);
+  -moz-transform: translateX(-50vw);
+  -ms-transform: translateX(-50vw);
+  -o-transform: translateX(-50vw);
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+}
+.slick-dots li button:hover, .slick-dots li button:focus {
+  outline: none;
+}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+  outline: none;
+}
+.slick-dots li button:before {
+  font-family: "slick";
+  font-size: 1.5625rem;
+  line-height: 1.25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  content: "•";
+  text-align: center;
+  opacity: 0.25;
+  color: #a0a0a0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (max-width: 600px) {
+  .slick-dots {
+    width: 100%;
+    bottom: -20px;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}
+
+.dots-mobile {
+  display: block;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: #003154;
+  font-size: 2.5rem;
 }
 
 /*------------------MAIN------------------*/

@@ -13,7 +13,13 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/favicon.ico" />
 
-    <script src="main/js/main.js" defer></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+
+    <script type="module" src="main/js/main.js" defer></script>
   </head>
 
   <body id="phone__menu-id-body">
@@ -21,12 +27,79 @@
       <!--@import "html/header.html"-->
 
       <main class="main">
-        <section class="start__section">
-          <div class="section__container"></div>
+        <section class="start__section d-fl">
+          <div class="start__container d-fl">
+            <div class="start__block start__block-left d-fl-col">
+              <div class="start__block-icon d-fl">
+                <div class="start__icon-img">
+                  <img src="/main/img/icon/cold.svg" alt="cold" />
+                </div>
+                <div class="start__icon-img">
+                  <img src="/main/img/icon/rain.svg" alt="rain" />
+                </div>
+                <div class="start__icon-img">
+                  <img src="/main/img/icon/wind.svg" alt="wind" />
+                </div>
+                <div class="start__icon-img">
+                  <img src="/main/img/icon/speed.svg" alt="speed" />
+                </div>
+              </div>
+              <h1>
+                Специальные цены <br />
+                на популярные модели фармацевтических шкафов
+              </h1>
+              <p>Снижаем цены ради высоких возможностей</p>
+              <a href="/" class="button__more">Подробнее</a>
+            </div>
+            <div class="start__block">
+              <div class="slider d-fl">
+                <div class="slider__item">
+                  <div class="slider__item-img">
+                    <img src="/main/img/photo/pic.webp" alt="pic" />
+                  </div>
+                </div>
+
+                <div class="slider__item">
+                  <div class="slider__item-img">
+                    <img src="/main/img/photo/pic.webp" alt="pic" />
+                  </div>
+                </div>
+
+                <div class="slider__item">
+                  <div class="slider__item-img">
+                    <img src="/main/img/photo/pic.webp" alt="pic" />
+                  </div>
+                </div>
+
+                <div class="slider__item">
+                  <div class="slider__item-img">
+                    <img src="/main/img/photo/pic.webp" alt="pic" />
+                  </div>
+                </div>
+
+                <div class="slider__item">
+                  <div class="slider__item-img">
+                    <img src="/main/img/photo/pic.webp" alt="pic" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
       <!--@import "html/footer.html"-->
     </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+      integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
   </body>
 </html>
