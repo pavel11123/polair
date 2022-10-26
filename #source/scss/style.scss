@@ -1,0 +1,78 @@
+@use "sass:math";
+
+@import "base.scss";
+@import "mixins.scss";
+@import "fonts.scss";
+
+html {
+  @media (min-width: 1441px) {
+    font-size: calc(100vw / 1440 * 16);
+  }
+
+  @media (max-width: 320px) {
+    font-size: calc(100vw / 320 * 16);
+  }
+}
+
+// ---------стандартные flex стили-----------
+.d-fl {
+  display: flex;
+}
+
+.d-fl-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-fl-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-fl-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.d-fl-wrap--reverse {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+// ---------стандартные flex стили-----------
+
+/*------------------ОБОЛОЧКА------------------*/
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+[class*="__container"] {
+  width: 100%;
+  max-width: rem(1230);
+  margin: 0 auto;
+  padding: 0 rem(15);
+
+  @media (min-width: 1441px) {
+    width: 127rem;
+    max-width: 100%;
+    padding: 0 rem(120);
+  }
+}
+/*------------------ОБОЛОЧКА------------------*/
+
+/*------------------HEADER------------------*/
+@import "header.scss";
+/*------------------HEADER------------------*/
+
+/*------------------MAIN------------------*/
+.main {
+  flex: 1 1 auto;
+}
+/*------------------MAIN------------------*/
+
+/*------------------FOOTER------------------*/
+@import "footer.scss";
+/*------------------FOOTER------------------*/
